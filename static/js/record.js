@@ -42,6 +42,7 @@ function sendAudioToServer(blob) {
         return response.text();
     }).then(data => {
         console.log(data);
+        window.location.href = "/?path=audio.wav";
     }).catch(error => {
         console.error(error);
     });

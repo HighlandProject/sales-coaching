@@ -5,12 +5,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Sales Score | Highland</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     </head>
     <body>
-        <button id="start">Start Recording</button>
-        <button id="stop" disabled>Stop Recording</button>
-        <audio id="audio" controls></audio>
-        <script src="{{ url_for('static', filename='js/index.js') }}" async defer></script>
+        <div id="recording-container">
+            <button id="start">Start Recording</button>
+            <button id="stop" disabled>Stop Recording</button>
+        </div>
+
+        <div id="loading-container" style="display: none;">
+            <div id="spinner-container">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <p id="loading-message">Transcribing your recording...</p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/record.js') }}" async defer></script>
     </body>
 </html>
